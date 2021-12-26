@@ -1,21 +1,16 @@
-import Question from "../components/question/Question";
-import Add from "../components/feed/Add";
-import Feed from "../components/feed/Feed";
-import Header from "../components/home/Header";
-import React, { useState } from "react";
+import { Container, Button, Box, Center } from "@chakra-ui/react";
+import Feed from "../components/Feed";
+import Header from "../components/Header";
 import Link from "next/link";
 
 export default function Home() {
-  const [questions, setQuestions] = useState([]);
-
-  function addQuestion(question) {
-    console.log("Question added!");
-    setQuestions([...questions, question]);
-  }
-
   return (
     <>
-      <Header />
+      <Link href="/ask">
+        <Center my={4}>
+          <Button>Ask a Question</Button>
+        </Center>
+      </Link>
       <Feed />
     </>
   );

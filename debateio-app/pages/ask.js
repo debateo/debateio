@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Container, Button, VStack, Box, Input } from "@chakra-ui/react";
 
 export default function Ask() {
   function handleSubmit(event) {
@@ -7,17 +7,15 @@ export default function Ask() {
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <label className="block">
-          <span className="text-gray-700">Textarea</span>
-          <textarea
-            className="form-textarea mt-1 block w-full"
-            rows="3"
-            placeholder="Enter some long form content."
-          ></textarea>
-        </label>
-      </form>
-    </>
+    <VStack spacing="10" my={10}>
+      <Box borderWidth="1px" borderRadius="lg" h="50px" width="75%">
+        <Input
+          width="100%"
+          height="100%"
+          placeholder="Write your question here..."
+        />
+      </Box>
+      <Button color="teal">Debate!</Button>
+    </VStack>
   );
 }
